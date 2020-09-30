@@ -11,13 +11,13 @@ import org.springframework.context.annotation.Bean;
 import java.util.Arrays;
 
 @SpringBootApplication
-public class SpringBootConsoleApplication implements CommandLineRunner {
+public class SpringBootWebApplication implements CommandLineRunner {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(SpringBootConsoleApplication.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(SpringBootWebApplication.class);
 
     public static void main(String[] args) {
         LOGGER.info("STARTING THE APPLICATION");
-        SpringApplication.run(SpringBootConsoleApplication.class, args);
+        SpringApplication.run(SpringBootWebApplication.class, args);
         LOGGER.info("APPLICATION FINISHED");
     }
 
@@ -27,12 +27,6 @@ public class SpringBootConsoleApplication implements CommandLineRunner {
 
         for (int i = 0; i < args.length; ++i) {
             LOGGER.info("args[{}]: {}", i, args[i]);
-        }
-
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            LOGGER.warn(e.getMessage(), e);
         }
     }
 
